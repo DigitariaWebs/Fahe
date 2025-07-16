@@ -1,0 +1,306 @@
+{
+  "welcome": "Bienvenue",
+  "hello": "Bonjour",
+  "goodbye": "Au revoir",
+  "language": "Langue",
+  "english": "Anglais",
+  "french": "Français",
+  "change_language": "Changer de langue",
+  "home": "Accueil",
+  "about": "À propos",
+  "contact": "Contact",
+  "loading": "Chargement...",
+  "error": "Une erreur s'est produite",
+  "success": "Succès",
+  "cancel": "Annuler",
+  "save": "Enregistrer",
+  "edit": "Modifier",
+  "delete": "Supprimer",
+  "confirm": "Confirmer",
+  "yes": "Oui",
+  "no": "Non",
+  "search": "Rechercher",
+  "filter": "Filtrer",
+  "sort": "Trier",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "page": "Page",
+  "of": "sur",
+  "results": "résultats",
+  "no_results": "Aucun résultat trouvé",
+  "select_language": "Sélectionnez une langue",
+  "hero": {
+    "title": "Garage Expert - Réparation Automobile de Qualité",
+    "subtitle": "Votre véhicule entre de bonnes mains. Service professionnel, réparations rapides et garantie satisfait.",
+    "specialization": "Spécialiste en transmission depuis plus de 20 ans",
+    "cta": {
+      "primary": "Prendre Rendez-vous",
+      "secondary": "Nos Services"
+    }
+  },
+  "services": {
+    "title": "Nos Services Spécialisés",
+    "subtitle": "Une expertise reconnue dans l'entretien automobile et la réparation de transmissions",
+    "cta": "Voir tous nos services",
+    "transmission_description": "Spécialiste en réparation et reconstruction de transmissions automatiques et manuelles.",
+    "engine_description": "Reconstruction complète de moteurs avec garantie et pièces d'origine.",
+    "maintenance_description": "Maintenance complète : vidange, freins, suspension, système électrique.",
+    "diagnostic_description": "Diagnostic électronique complet avec équipements de pointe.",
+    "transmission": {
+      "title": "Service de Transmission Professionnel",
+      "subtitle": "Expert en réparation et reconstruction de transmissions avec plus de 20 ans d'expérience",
+      "features": {
+        "diagnosis": "Diagnostic Complet",
+        "diagnosisDesc": "Analyse complète de votre système de transmission avec équipements modernes",
+        "repair": "Réparation Expert",
+        "repairDesc": "Réparation et reconstruction de transmissions automatiques et manuelles",
+        "maintenance": "Entretien Préventif",
+        "maintenanceDesc": "Entretien régulier pour prolonger la vie de votre transmission"
+      },
+      "processTitle": "Notre Processus de Service",
+      "processSubtitle": "Un processus méticuleux pour garantir la qualité de nos réparations",
+      "process": {
+        "step1": "Inspection Initiale",
+        "step1Desc": "Examen complet et diagnostic électronique du système",
+        "step2": "Analyse Détaillée",
+        "step2Desc": "Identification précise des composants défaillants",
+        "step3": "Réparation Experte",
+        "step3Desc": "Réparation ou reconstruction avec pièces d'origine",
+        "step4": "Test de Qualité",
+        "step4Desc": "Vérification complète et test de performance"
+      },
+      "ctaTitle": "Problème de Transmission?",
+      "ctaSubtitle": "Contactez nos experts pour un diagnostic gratuit et un devis personnalisé"
+    },
+    "engine": {
+      "title": "Reconstruction de Moteur Expert",
+      "subtitle": "Service complet de reconstruction et réparation de moteurs avec garantie",
+      "features": {
+        "rebuild": "Reconstruction Complète",
+        "rebuildDesc": "Reconstruction totale de moteur avec pièces neuves et garantie",
+        "performance": "Optimisation Performance",
+        "performanceDesc": "Amélioration des performances et de l'efficacité énergétique",
+        "warranty": "Garantie Étendue",
+        "warrantyDesc": "Garantie complète sur tous nos travaux de reconstruction"
+      },
+      "detailTitle": "Excellence en Reconstruction",
+      "details": {
+        "item1": "Utilisation exclusive de pièces d'origine ou équivalentes certifiées",
+        "item2": "Processus de reconstruction selon les spécifications manufacturier",
+        "item3": "Tests de performance complets avant livraison du véhicule"
+      },
+      "ctaTitle": "Moteur Défaillant?",
+      "ctaSubtitle": "Obtenez un devis gratuit pour la reconstruction de votre moteur"
+    },
+    "maintenance": {
+      "title": "Entretien Automobile Complet",
+      "subtitle": "Service d'entretien préventif pour maintenir votre véhicule en parfait état",
+      "services": {
+        "oil": "Vidange d'Huile",
+        "oilDesc": "Changement d'huile moteur et remplacement du filtre selon les spécifications",
+        "brakes": "Système de Freinage",
+        "brakesDesc": "Inspection et réparation complète du système de freinage",
+        "electrical": "Système Électrique",
+        "electricalDesc": "Diagnostic et réparation des systèmes électriques et électroniques",
+        "suspension": "Suspension",
+        "suspensionDesc": "Inspection et remplacement des composants de suspension",
+        "tires": "Pneus et Roues",
+        "tiresDesc": "Installation, équilibrage et alignement de pneus",
+        "cooling": "Système de Refroidissement",
+        "coolingDesc": "Entretien du radiateur et du système de refroidissement"
+      },
+      "benefitsTitle": "Avantages de l'Entretien Régulier",
+      "benefits": {
+        "item1": "Prolonge la durée de vie de votre véhicule",
+        "item2": "Prévient les pannes coûteuses et imprévues",
+        "item3": "Maintient la valeur de revente de votre automobile",
+        "item4": "Assure votre sécurité et celle de vos passagers"
+      },
+      "ctaTitle": "Planifiez Votre Entretien",
+      "ctaSubtitle": "Réservez dès maintenant votre service d'entretien préventif"
+    },
+    "diagnostic": {
+      "title": "Diagnostic Automobile Avancé",
+      "subtitle": "Technologie de pointe pour identifier précisément les problèmes de votre véhicule",
+      "types": {
+        "computer": "Diagnostic Informatique",
+        "computerDesc": "Analyse des codes d'erreur et systèmes électroniques embarqués",
+        "electrical": "Diagnostic Électrique",
+        "electricalDesc": "Test complet des circuits et composants électriques",
+        "mechanical": "Diagnostic Mécanique",
+        "mechanicalDesc": "Inspection des composants mécaniques et systèmes",
+        "emission": "Test d'Émissions",
+        "emissionDesc": "Vérification de la conformité environnementale"
+      },
+      "equipmentTitle": "Équipement de Diagnostic",
+      "equipmentSubtitle": "Nous utilisons les technologies les plus avancées pour un diagnostic précis",
+      "equipment": {
+        "scanner": "Scanner OBD Professionnel",
+        "scannerDesc": "Lecture complète des codes d'erreur de tous les systèmes",
+        "oscilloscope": "Oscilloscope Numérique",
+        "oscilloscopeDesc": "Analyse des signaux électriques en temps réel",
+        "multimeter": "Multimètre de Précision",
+        "multimeterDesc": "Mesures électriques précises pour tous les circuits",
+        "pressure": "Testeur de Pression",
+        "pressureDesc": "Test de pression des fluides et systèmes hydrauliques"
+      },
+      "processTitle": "Processus de Diagnostic",
+      "processSubtitle": "Une approche systématique pour identifier tous les problèmes",
+      "process": {
+        "step1": "Consultation Initiale",
+        "step1Desc": "Discussion des symptômes et historique du véhicule",
+        "step2": "Test Électronique",
+        "step2Desc": "Scan complet des systèmes avec équipement spécialisé",
+        "step3": "Rapport Détaillé",
+        "step3Desc": "Explication claire des problèmes et solutions recommandées"
+      },
+      "ctaTitle": "Problème Non Identifié?",
+      "ctaSubtitle": "Notre diagnostic complet révélera la cause de vos problèmes automobiles"
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Plus de 20 ans d'expérience et des centaines de clients satisfaits dans la région de Joliette",
+    "cta_text": "Rejoignez nos clients satisfaits",
+    "cta_button": "Prendre Rendez-vous"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "getQuote": "Devis"
+  },
+  "navbar": {
+    "brand": "Fahe Garage",
+    "services": "Services",
+    "specials": "Promotions",
+    "facilities": "Installations",
+    "reviews": "Avis",
+    "shop": "Boutique",
+    "about": "À propos",
+    "boarding_hours": "Heures d'accueil",
+    "schedule": "Lun - Sam: 7h00 - 18h00",
+    "call_us": "Appelez-nous",
+    "phone": "(555) Car-Repair",
+    "appointment": "Prendre Rendez-vous"
+  },
+  "aboutUs": {
+    "title": "À Propos de Nous",
+    "subtitle": "Votre partenaire de confiance pour tous vos besoins automobiles à Joliette. Nous offrons des services professionnels avec une équipe expérimentée et passionnée.",
+    "mission": {
+      "title": "Notre Mission",
+      "description1": "Chez FAHE, nous nous engageons à fournir des services automobiles de la plus haute qualité. Notre équipe de mécaniciens certifiés utilise les technologies les plus avancées pour diagnostiquer et réparer votre véhicule avec précision.",
+      "description2": "Nous croyons en la transparence, l'honnêteté et la satisfaction client. Chaque véhicule qui entre dans notre atelier reçoit l'attention personnalisée qu'il mérite."
+    },
+    "contact": {
+      "address": "Notre Adresse",
+      "addressValue": "2844 Boul Industriel, Joliette, QC",
+      "phone": "Contactez-nous",
+      "phoneValue": "(438) 867-1822"
+    },
+    "features": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "Des services de qualité supérieure pour votre véhicule"
+      },
+      "speed": {
+        "title": "Rapidité",
+        "description": "Service rapide et efficace pour votre tranquillité d'esprit"
+      },
+      "trust": {
+        "title": "Confiance",
+        "description": "Plus de 20 ans d'expérience dans le domaine automobile"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Notre Galerie",
+    "subtitle": "Découvrez notre atelier moderne et notre équipe de professionnels au travail",
+    "view": "Voir l'image",
+    "categories": {
+      "workshop": "Atelier",
+      "transmission": "Transmission",
+      "engine": "Moteur",
+      "diagnostic": "Diagnostic",
+      "equipment": "Équipement",
+      "service": "Service",
+      "repair": "Réparation",
+      "team": "Équipe"
+    },
+    "images": {
+      "mechanic_working": "Mécanicien au travail",
+      "transmission_repair": "Réparation transmission",
+      "engine_rebuild": "Reconstruction moteur",
+      "auto_diagnostic": "Diagnostic automobile",
+      "modern_equipment": "Équipement moderne",
+      "customer_service": "Service client",
+      "pro_workshop": "Atelier professionnel",
+      "specialized_repair": "Réparation spécialisée",
+      "expert_mechanic": "Mécanicien expert"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à faire entretenir votre véhicule? Contactez notre équipe d'experts dès aujourd'hui pour un service professionnel et fiable.",
+    "info": {
+      "title": "Informations de Contact"
+    },
+    "form": {
+      "title": "Envoyez-nous un Message",
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "votre@email.com",
+      "phone": "Téléphone",
+      "phonePlaceholder": "(XXX) XXX-XXXX",
+      "service": "Service requis",
+      "selectService": "Sélectionnez un service",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre problème ou vos besoins...",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "success": "Votre message a été envoyé avec succès! Nous vous contacterons bientôt.",
+      "error": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    },
+    "services": {
+      "other": "Autre"
+    }
+  },
+  "footer": {
+    "brand": "FAHE Garage",
+    "tagline": "Expert Automobile",
+    "description": "Spécialiste en transmission depuis plus de 20 ans. Votre partenaire de confiance pour tous vos besoins automobiles à Joliette.",
+    "contact": {
+      "title": "Contactez-nous",
+      "address": "2844 Boul Industriel",
+      "city": "Joliette, QC J6E 0N4",
+      "phone": "(438) 867-1822",
+      "phone_label": "Appelez pour rendez-vous",
+      "email": "info@fahegarage.com",
+      "email_label": "Écrivez-nous"
+    },
+    "hours": {
+      "title": "Heures d'ouverture",
+      "weekdays": "Lundi - Vendredi",
+      "weekdays_time": "8h30 - 17h00",
+      "saturday": "Samedi",
+      "saturday_time": "9h00 - 13h00",
+      "sunday": "Dimanche",
+      "closed": "Fermé"
+    },
+    "services": {
+      "title": "Nos Services",
+      "transmission": "Réparation Transmission",
+      "engine": "Reconstruction Moteur",
+      "maintenance": "Entretien Complet",
+      "diagnostic": "Diagnostic Auto",
+      "bodywork": "Carrosserie",
+      "other": "Autre"
+    },
+    "rights": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions"
+  }
+}

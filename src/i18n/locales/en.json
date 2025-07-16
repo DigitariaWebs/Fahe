@@ -1,0 +1,306 @@
+{
+  "welcome": "Welcome",
+  "hello": "Hello",
+  "goodbye": "Goodbye",
+  "language": "Language",
+  "english": "English",
+  "french": "French",
+  "change_language": "Change Language",
+  "home": "Home",
+  "about": "About",
+  "contact": "Contact",
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "success": "Success",
+  "cancel": "Cancel",
+  "save": "Save",
+  "edit": "Edit",
+  "delete": "Delete",
+  "confirm": "Confirm",
+  "yes": "Yes",
+  "no": "No",
+  "search": "Search",
+  "filter": "Filter",
+  "sort": "Sort",
+  "previous": "Previous",
+  "next": "Next",
+  "page": "Page",
+  "of": "of",
+  "results": "results",
+  "no_results": "No results found",
+  "select_language": "Select a language",
+  "hero": {
+    "title": "Expert Garage - Quality Automotive Repair",
+    "subtitle": "Your vehicle in good hands. Professional service, fast repairs and satisfaction guarantee.",
+    "specialization": "Transmission specialist for over 20 years",
+    "cta": {
+      "primary": "Make an Appointment",
+      "secondary": "Our Services"
+    }
+  },
+  "services": {
+    "title": "Our Specialized Services",
+    "subtitle": "Recognized expertise in automotive maintenance and transmission repair",
+    "cta": "See all our services",
+    "transmission_description": "Specialist in repair and reconstruction of automatic and manual transmissions.",
+    "engine_description": "Complete engine rebuilding with warranty and original parts.",
+    "maintenance_description": "Complete maintenance: oil change, brakes, suspension, electrical system.",
+    "diagnostic_description": "Complete electronic diagnostics with state-of-the-art equipment.",
+    "transmission": {
+      "title": "Professional Transmission Service",
+      "subtitle": "Expert in transmission repair and reconstruction with over 20 years of experience",
+      "features": {
+        "diagnosis": "Complete Diagnosis",
+        "diagnosisDesc": "Complete analysis of your transmission system with modern equipment",
+        "repair": "Expert Repair",
+        "repairDesc": "Repair and reconstruction of automatic and manual transmissions",
+        "maintenance": "Preventive Maintenance",
+        "maintenanceDesc": "Regular maintenance to extend the life of your transmission"
+      },
+      "processTitle": "Our Service Process",
+      "processSubtitle": "A meticulous process to guarantee the quality of our repairs",
+      "process": {
+        "step1": "Initial Inspection",
+        "step1Desc": "Complete examination and electronic diagnosis of the system",
+        "step2": "Detailed Analysis",
+        "step2Desc": "Precise identification of failing components",
+        "step3": "Expert Repair",
+        "step3Desc": "Repair or reconstruction with original parts",
+        "step4": "Quality Test",
+        "step4Desc": "Complete verification and performance testing"
+      },
+      "ctaTitle": "Transmission Problem?",
+      "ctaSubtitle": "Contact our experts for a free diagnosis and personalized quote"
+    },
+    "engine": {
+      "title": "Expert Engine Rebuilding",
+      "subtitle": "Complete engine rebuilding and repair service with warranty",
+      "features": {
+        "rebuild": "Complete Rebuilding",
+        "rebuildDesc": "Total engine rebuilding with new parts and warranty",
+        "performance": "Performance Optimization",
+        "performanceDesc": "Improvement of performance and fuel efficiency",
+        "warranty": "Extended Warranty",
+        "warrantyDesc": "Complete warranty on all our rebuilding work"
+      },
+      "detailTitle": "Excellence in Rebuilding",
+      "details": {
+        "item1": "Exclusive use of original or certified equivalent parts",
+        "item2": "Rebuilding process according to manufacturer specifications",
+        "item3": "Complete performance tests before vehicle delivery"
+      },
+      "ctaTitle": "Engine Failure?",
+      "ctaSubtitle": "Get a free quote for your engine rebuilding"
+    },
+    "maintenance": {
+      "title": "Complete Automotive Maintenance",
+      "subtitle": "Preventive maintenance service to keep your vehicle in perfect condition",
+      "services": {
+        "oil": "Oil Change",
+        "oilDesc": "Engine oil change and filter replacement according to specifications",
+        "brakes": "Brake System",
+        "brakesDesc": "Complete inspection and repair of the brake system",
+        "electrical": "Electrical System",
+        "electricalDesc": "Diagnosis and repair of electrical and electronic systems",
+        "suspension": "Suspension",
+        "suspensionDesc": "Inspection and replacement of suspension components",
+        "tires": "Tires and Wheels",
+        "tiresDesc": "Tire installation, balancing and alignment",
+        "cooling": "Cooling System",
+        "coolingDesc": "Radiator and cooling system maintenance"
+      },
+      "benefitsTitle": "Benefits of Regular Maintenance",
+      "benefits": {
+        "item1": "Extends the life of your vehicle",
+        "item2": "Prevents costly and unexpected breakdowns",
+        "item3": "Maintains the resale value of your automobile",
+        "item4": "Ensures your safety and that of your passengers"
+      },
+      "ctaTitle": "Schedule Your Maintenance",
+      "ctaSubtitle": "Book your preventive maintenance service now"
+    },
+    "diagnostic": {
+      "title": "Advanced Automotive Diagnostics",
+      "subtitle": "State-of-the-art technology to precisely identify your vehicle's problems",
+      "types": {
+        "computer": "Computer Diagnostics",
+        "computerDesc": "Analysis of error codes and onboard electronic systems",
+        "electrical": "Electrical Diagnostics",
+        "electricalDesc": "Complete testing of electrical circuits and components",
+        "mechanical": "Mechanical Diagnostics",
+        "mechanicalDesc": "Inspection of mechanical components and systems",
+        "emission": "Emission Testing",
+        "emissionDesc": "Environmental compliance verification"
+      },
+      "equipmentTitle": "Diagnostic Equipment",
+      "equipmentSubtitle": "We use the most advanced technologies for precise diagnosis",
+      "equipment": {
+        "scanner": "Professional OBD Scanner",
+        "scannerDesc": "Complete reading of error codes from all systems",
+        "oscilloscope": "Digital Oscilloscope",
+        "oscilloscopeDesc": "Real-time electrical signal analysis",
+        "multimeter": "Precision Multimeter",
+        "multimeterDesc": "Precise electrical measurements for all circuits",
+        "pressure": "Pressure Tester",
+        "pressureDesc": "Fluid and hydraulic system pressure testing"
+      },
+      "processTitle": "Diagnostic Process",
+      "processSubtitle": "A systematic approach to identify all problems",
+      "process": {
+        "step1": "Initial Consultation",
+        "step1Desc": "Discussion of symptoms and vehicle history",
+        "step2": "Electronic Testing",
+        "step2Desc": "Complete system scan with specialized equipment",
+        "step3": "Detailed Report",
+        "step3Desc": "Clear explanation of problems and recommended solutions"
+      },
+      "ctaTitle": "Unidentified Problem?",
+      "ctaSubtitle": "Our complete diagnostic will reveal the cause of your automotive problems"
+    }
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "subtitle": "Over 20 years of experience and hundreds of satisfied customers in the Joliette region",
+    "cta_text": "Join our satisfied customers",
+    "cta_button": "Make an Appointment"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "getQuote": "Get Quote"
+  },
+  "navbar": {
+    "brand": "Fahe Garage",
+    "services": "Services",
+    "specials": "Specials",
+    "facilities": "Facilities",
+    "reviews": "Reviews",
+    "shop": "Shop",
+    "about": "About",
+    "boarding_hours": "Boarding Hours",
+    "schedule": "Mon - Sat: 7:00 am - 6:00 pm",
+    "call_us": "Call Us",
+    "phone": "(555) Car-Repair",
+    "appointment": "Make an Appointment"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "subtitle": "Your trusted partner for all your automotive needs in Joliette. We offer professional services with an experienced and passionate team.",
+    "mission": {
+      "title": "Our Mission",
+      "description1": "At FAHE, we are committed to providing the highest quality automotive services. Our team of certified mechanics uses the most advanced technologies to diagnose and repair your vehicle with precision.",
+      "description2": "We believe in transparency, honesty and customer satisfaction. Every vehicle that enters our workshop receives the personalized attention it deserves."
+    },
+    "contact": {
+      "address": "Our Address",
+      "addressValue": "2844 Boul Industriel, Joliette, QC",
+      "phone": "Contact Us",
+      "phoneValue": "(438) 867-1822"
+    },
+    "features": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "Superior quality services for your vehicle"
+      },
+      "speed": {
+        "title": "Speed",
+        "description": "Fast and efficient service for your peace of mind"
+      },
+      "trust": {
+        "title": "Trust",
+        "description": "Over 20 years of experience in the automotive field"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "subtitle": "Discover our modern workshop and our team of professionals at work",
+    "view": "View image",
+    "categories": {
+      "workshop": "Workshop",
+      "transmission": "Transmission",
+      "engine": "Engine",
+      "diagnostic": "Diagnostic",
+      "equipment": "Equipment",
+      "service": "Service",
+      "repair": "Repair",
+      "team": "Team"
+    },
+    "images": {
+      "mechanic_working": "Mechanic working",
+      "transmission_repair": "Transmission repair",
+      "engine_rebuild": "Engine rebuild",
+      "auto_diagnostic": "Auto diagnostic",
+      "modern_equipment": "Modern equipment",
+      "customer_service": "Customer service",
+      "pro_workshop": "Professional workshop",
+      "specialized_repair": "Specialized repair",
+      "expert_mechanic": "Expert mechanic"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to service your vehicle? Contact our team of experts today for professional and reliable service.",
+    "info": {
+      "title": "Contact Information"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(XXX) XXX-XXXX",
+      "service": "Service Needed",
+      "selectService": "Select a service",
+      "message": "Message",
+      "messagePlaceholder": "Describe your problem or needs...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully! We will contact you soon.",
+      "error": "An error occurred. Please try again later."
+    },
+    "services": {
+      "other": "Other"
+    }
+  },
+  "footer": {
+    "brand": "FAHE Garage",
+    "tagline": "Automotive Expert",
+    "description": "Transmission specialist for over 20 years. Your trusted partner for all your automotive needs in Joliette.",
+    "contact": {
+      "title": "Contact Us",
+      "address": "2844 Boul Industriel",
+      "city": "Joliette, QC J6E 0N4",
+      "phone": "(438) 867-1822",
+      "phone_label": "Call for appointment",
+      "email": "info@fahegarage.com",
+      "email_label": "Email us"
+    },
+    "hours": {
+      "title": "Opening Hours",
+      "weekdays": "Monday - Friday",
+      "weekdays_time": "8:30 AM - 5:00 PM",
+      "saturday": "Saturday",
+      "saturday_time": "9:00 AM - 1:00 PM",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    },
+    "services": {
+      "title": "Our Services",
+      "transmission": "Transmission Repair",
+      "engine": "Engine Rebuild",
+      "maintenance": "Complete Maintenance",
+      "diagnostic": "Auto Diagnostic",
+      "bodywork": "Body Work",
+      "other": "Other"
+    },
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
