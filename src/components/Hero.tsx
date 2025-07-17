@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { videos } from '../config/assets'
-import { Button } from './ui/button'
+import { colors } from '../config/colors'
 import { navigateToContact } from '../utils/navigation'
 
 export default function Hero() {
@@ -27,33 +28,35 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      <div className="relative z-10 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="text-center text-white max-w-5xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             {t('hero.title')}
           </h1>
-          <p className="text-xl md:text-2xl mb-6 opacity-90">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 sm:mb-6 opacity-90 max-w-4xl mx-auto">
             {t('hero.subtitle')}
           </p>
-          <p className="text-lg md:text-xl mb-8 opacity-80 font-medium text-yellow-300">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 lg:mb-10 opacity-80 font-medium text-yellow-300 max-w-3xl mx-auto">
             {t('hero.specialization')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-[#05299E] hover:bg-[#041f7d] text-white px-8 py-3"
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-md sm:max-w-none mx-auto">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+              style={{ backgroundColor: colors.primary[600] }}
               onClick={() => navigateToContact(navigate, location.pathname)}
             >
               {t('hero.cta.primary')}
-            </Button>
-            <Link to="/services">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-white text-[#05299E] hover:bg-white hover:text-black px-8 py-3"
+            </motion.button>
+            <Link to="/services" className="w-full sm:w-auto">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-gray-900 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
               >
                 {t('hero.cta.secondary')}
-              </Button>
+              </motion.button>
             </Link>
           </div>
         </div>
