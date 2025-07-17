@@ -1,4 +1,4 @@
-import { NavigateFunction } from 'react-router-dom'
+import type { NavigateFunction } from 'react-router-dom'
 
 export const navigateToContact = (navigate: NavigateFunction, currentPath: string) => {
   if (currentPath === '/') {

@@ -70,7 +70,55 @@
         "step4Desc": "Complete verification and performance testing"
       },
       "ctaTitle": "Transmission Problem?",
-      "ctaSubtitle": "Contact our experts for a free diagnosis and personalized quote"
+      "ctaSubtitle": "Contact our experts for a free diagnosis and personalized quote",
+      "testimonialsTitle": "Customer Testimonials",
+      "testimonialsSubtitle": "What our clients say about our transmission services",
+      "testimonials": {
+        "test1": {
+          "name": "John D.",
+          "comment": "Excellent service! My transmission is like new."
+        },
+        "test2": {
+          "name": "Sarah M.",
+          "comment": "Quick and professional repair. Highly recommended!"
+        },
+        "test3": {
+          "name": "Mike R.",
+          "comment": "Great value for money. Transmission works perfectly now."
+        }
+      },
+      "technologyTitle": "Our Transmission Technology",
+      "technologySubtitle": "Advanced tools and equipment for precise repairs",
+      "technology": {
+        "item1": {
+          "title": "Diagnostic Scanner",
+          "desc": "State-of-the-art scanning tools for accurate problem detection"
+        },
+        "item2": {
+          "title": "Rebuilding Equipment",
+          "desc": "Professional tools for complete transmission rebuilding"
+        },
+        "item3": {
+          "title": "Testing Bench",
+          "desc": "Specialized bench for performance testing"
+        }
+      },
+      "whyTitle": "Why Choose Us for Transmission",
+      "whySubtitle": "Expertise and reliability in transmission services",
+      "why": {
+        "item1": {
+          "title": "20+ Years Experience",
+          "desc": "Specialized in transmissions for over two decades"
+        },
+        "item2": {
+          "title": "Warranty Included",
+          "desc": "Comprehensive warranty on all repairs"
+        },
+        "item3": {
+          "title": "Quick Turnaround",
+          "desc": "Fast service without compromising quality"
+        }
+      }
     },
     "engine": {
       "title": "Expert Engine Rebuilding",
@@ -90,7 +138,51 @@
         "item3": "Complete performance tests before vehicle delivery"
       },
       "ctaTitle": "Engine Failure?",
-      "ctaSubtitle": "Get a free quote for your engine rebuilding"
+      "ctaSubtitle": "Get a free quote for your engine rebuilding",
+      "processTitle": "Our Engine Rebuilding Process",
+      "processSubtitle": "Step-by-step approach to engine restoration",
+      "process": {
+        "step1": "Initial Assessment",
+        "step1Desc": "Thorough inspection of engine condition",
+        "step2": "Disassembly",
+        "step2Desc": "Careful disassembly and cleaning",
+        "step3": "Rebuilding",
+        "step3Desc": "Replacement with quality parts",
+        "step4": "Testing",
+        "step4Desc": "Comprehensive performance testing"
+      },
+      "testimonialsTitle": "Engine Service Testimonials",
+      "testimonialsSubtitle": "Feedback from our satisfied engine repair clients",
+      "testimonials": {
+        "test1": {
+          "name": "Emily S.",
+          "comment": "My engine runs better than ever after the rebuild!"
+        },
+        "test2": {
+          "name": "David L.",
+          "comment": "Professional service and great results."
+        },
+        "test3": {
+          "name": "Anna K.",
+          "comment": "Saved me from buying a new car. Excellent work!"
+        }
+      },
+      "whyTitle": "Why Us for Engine Services",
+      "whySubtitle": "Trusted engine rebuilding experts",
+      "why": {
+        "item1": {
+          "title": "Certified Mechanics",
+          "desc": "Highly trained and certified professionals"
+        },
+        "item2": {
+          "title": "Quality Parts",
+          "desc": "Only using premium quality components"
+        },
+        "item3": {
+          "title": "Satisfaction Guarantee",
+          "desc": "We stand behind our work 100%"
+        }
+      }
     },
     "maintenance": {
       "title": "Complete Automotive Maintenance",
@@ -117,7 +209,49 @@
         "item4": "Ensures your safety and that of your passengers"
       },
       "ctaTitle": "Schedule Your Maintenance",
-      "ctaSubtitle": "Book your preventive maintenance service now"
+      "ctaSubtitle": "Book your preventive maintenance service now",
+      "processTitle": "Maintenance Process",
+      "processSubtitle": "Our systematic approach to vehicle maintenance",
+      "process": {
+        "step1": "Inspection",
+        "step1Desc": "Complete vehicle check-up",
+        "step2": "Service",
+        "step2Desc": "Perform required maintenance",
+        "step3": "Verification",
+        "step3Desc": "Final quality check"
+      },
+      "testimonialsTitle": "Maintenance Testimonials",
+      "testimonialsSubtitle": "What clients say about our maintenance services",
+      "testimonials": {
+        "test1": {
+          "name": "Robert T.",
+          "comment": "Regular maintenance keeps my car running smoothly."
+        },
+        "test2": {
+          "name": "Lisa W.",
+          "comment": "Quick and thorough service every time."
+        },
+        "test3": {
+          "name": "Michael B.",
+          "comment": "Best maintenance shop in town!"
+        }
+      },
+      "technologyTitle": "Maintenance Technology",
+      "technologySubtitle": "Modern tools for efficient maintenance",
+      "technology": {
+        "item1": {
+          "title": "Diagnostic Tools",
+          "desc": "Advanced scanning equipment"
+        },
+        "item2": {
+          "title": "Lift Systems",
+          "desc": "Professional vehicle lifts"
+        },
+        "item3": {
+          "title": "Alignment Machines",
+          "desc": "Precision alignment systems"
+        }
+      }
     },
     "diagnostic": {
       "title": "Advanced Automotive Diagnostics",
@@ -155,7 +289,55 @@
         "step3Desc": "Clear explanation of problems and recommended solutions"
       },
       "ctaTitle": "Unidentified Problem?",
-      "ctaSubtitle": "Our complete diagnostic will reveal the cause of your automotive problems"
+      "ctaSubtitle": "Our complete diagnostic will reveal the cause of your automotive problems",
+      "testimonialsTitle": "Diagnostic Testimonials",
+      "testimonialsSubtitle": "Client feedback on our diagnostic services",
+      "testimonials": {
+        "test1": {
+          "name": "Sophie L.",
+          "comment": "Accurate diagnosis saved me time and money."
+        },
+        "test2": {
+          "name": "Thomas G.",
+          "comment": "Found the issue other garages missed."
+        },
+        "test3": {
+          "name": "Maria V.",
+          "comment": "Professional and detailed diagnostic service."
+        }
+      },
+      "benefitsTitle": "Benefits of Professional Diagnostics",
+      "benefitsSubtitle": "Why choose our diagnostic services",
+      "benefits": {
+        "item1": {
+          "title": "Accuracy",
+          "desc": "Precise problem identification"
+        },
+        "item2": {
+          "title": "Efficiency",
+          "desc": "Save time on repairs"
+        },
+        "item3": {
+          "title": "Cost Savings",
+          "desc": "Prevent unnecessary repairs"
+        }
+      },
+      "whyTitle": "Why Our Diagnostic Service",
+      "whySubtitle": "Expert diagnostics you can trust",
+      "why": {
+        "item1": {
+          "title": "Advanced Equipment",
+          "desc": "Latest diagnostic technology"
+        },
+        "item2": {
+          "title": "Experienced Techs",
+          "desc": "Skilled technicians"
+        },
+        "item3": {
+          "title": "Quick Results",
+          "desc": "Fast and reliable diagnostics"
+        }
+      }
     }
   },
   "testimonials": {
@@ -302,5 +484,42 @@
     "rights": "All rights reserved.",
     "privacy": "Privacy",
     "terms": "Terms"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to some of the most common questions from our customers.",
+    "questions": {
+      "q1": {
+        "question": "What types of vehicles do you service?",
+        "answer": "We service all makes and models, including domestic, European, and Asian vehicles."
+      },
+      "q2": {
+        "question": "Do you offer a warranty on repairs?",
+        "answer": "Yes, we offer a warranty on both parts and labor for most repairs. Please ask us for details about your specific service."
+      },
+      "q3": {
+        "question": "How can I book an appointment?",
+        "answer": "You can book an appointment by calling us, using our online contact form, or visiting us in person."
+      },
+      "q4": {
+        "question": "How long does a typical service take?",
+        "answer": "Most routine services are completed the same day. More complex repairs may take longer, and we will always keep you informed."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tips, news, and advice from our experts.",
+    "readMore": "Read more",
+    "posts": {
+      "post1": {
+        "title": "5 Essential Car Maintenance Tips for Every Driver",
+        "summary": "Keep your vehicle running smoothly and avoid costly repairs with these five essential maintenance tips. Learn how regular checks can extend your car's life."
+      },
+      "post2": {
+        "title": "How to Know When Your Transmission Needs Service",
+        "summary": "Transmission issues can be tricky. Discover the warning signs that indicate it's time to bring your car in for a professional transmission check."
+      }
+    }
   }
 }

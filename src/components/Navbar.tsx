@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [isScrolled, setIsScrolled] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
   const searchInputRef = useRef<HTMLInputElement>(null)
   
@@ -25,7 +26,8 @@ export default function Navbar() {
 
   const menuItems = [
     { key: 'services', label: 'Services', hasDropdown: true },
-    { key: 'about', label: 'About' }
+    { key: 'about', label: 'About' },
+    { key: 'blog', label: 'Blog' }
   ]
 
   const serviceItems = [
@@ -34,6 +36,16 @@ export default function Navbar() {
     { key: 'maintenance', label: t('footer.services.maintenance') },
     { key: 'diagnostic', label: t('footer.services.diagnostic') }
   ]
+
+  // Scroll effect for navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Click outside to close search and dropdown
   useEffect(() => {
@@ -75,142 +87,248 @@ export default function Navbar() {
   }, [isSearchOpen])
 
   return (
-    <nav className="w-full absolute top-0 left-0 z-50">
-      {/* Main Navigation Bar */}
-      <div className="w-full bg-transparent">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full fixed top-0 left-0 z-50"
+    >
+      {/* Main Navigation Bar with Glassmorphism Effect */}
+      <motion.div 
+        animate={{
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: isScrolled ? 'blur(20px)' : 'blur(10px)',
+        }}
+        transition={{ duration: 0.3 }}
+        className="w-full border-b border-white/20 shadow-lg"
+        style={{
+          background: isScrolled 
+            ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.9))'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(248, 250, 252, 0.05))'
+        }}
+      >
         <div className="max-w-none w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/">
-                <img src="/logo.svg" alt="Logo" className="w-24 h-24" />
+          <div className="flex items-center justify-between h-18">
+            {/* Enhanced Logo */}
+            <motion.div 
+              className="flex items-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Link to="/" className="relative group">
+                <motion.div
+                  whileHover={{ rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <img 
+                    src="/logo.svg" 
+                    alt="Logo" 
+                    className="w-28 h-28 filter drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-2xl" 
+                  />
+                </motion.div>
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
+            </motion.div>
+
+            {/* Enhanced Center Info - Boarding Hours */}
+            <div
+              className={`hidden md:flex items-center space-x-8 px-6 py-3 rounded-2xl transition-all duration-300 ${
+                isScrolled 
+                  ? 'bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg' 
+                  : 'bg-white/20 backdrop-blur-sm'
+              }`}
+            >
+              <span className={`text-sm font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-blue-700' : 'text-white')}`}
+                style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
+                BOARDING HOURS: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-blue-600' : 'text-white')}
+                  style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
+                  Lun-Ven 8h30-17h
+                </span>
+              </span>
             </div>
 
-            {/* Center Info - Boarding Hours */}
-            <div className={`hidden md:flex items-center space-x-2 ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: colors.primary[700]}}>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <div className="flex flex-col">
-                <span className={`text-sm font-semibold ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>BOARDING</span>
-                <span className={`text-sm font-semibold ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>HOURS</span>
-              </div>
-              <span className={`text-sm ${isServicesPage ? 'text-blue-600' : 'text-white'} ml-2`}>Lun-Ven 8h30-17h</span>
-            </div>
-
-            {/* Right Side - Call Us & CTA */}
-            <div className="flex items-center space-x-6">
-              {/* Call Us */}
-              <div className={`hidden md:flex items-center space-x-2 ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: colors.primary[700]}}>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <div className="flex flex-col">
-                  <span className={`text-sm font-semibold ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>CALL US</span>
-                  <span className={`text-sm ${isServicesPage ? 'text-blue-600' : 'text-white'}`}>(438) 867-1822</span>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <button 
-                onClick={() => navigateToContact(navigate, location.pathname)}
-                className="text-white px-6 py-2 text-sm font-bold rounded transition-all duration-200 flex items-center space-x-2"
-                style={{backgroundColor: colors.primary[700]}}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = colors.primary[800]}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = colors.primary[700]}
+            {/* Enhanced Right Side - Call Us & CTA */}
+            <div className="flex items-center space-x-4">
+              {/* Simple Call Us */}
+              <div
+                className={`hidden md:flex items-center space-x-8 px-6 py-3 rounded-2xl transition-all duration-300 ${
+                  isScrolled 
+                    ? 'bg-gradient-to-r from-gray-50 to-gray-100 shadow-lg' 
+                    : 'bg-white/20 backdrop-blur-sm'
+                }`}
               >
-                <span>MAKE AN APPOINTMENT</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </button>
+                <span className={`text-sm font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
+                  style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
+                  CALL US: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-gray-600' : 'text-white/90')}
+                    style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
+                    (438) 867-1822
+                  </span>
+                </span>
+              </div>
 
-              {/* Mobile menu button */}
-              <div 
-                className="md:hidden p-2 text-white transition-colors duration-200 cursor-pointer"
-                onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
+              {/* Enhanced CTA Button */}
+              <motion.button 
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: `0 10px 30px ${colors.primary[500]}40`
+                }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => navigateToContact(navigate, location.pathname)}
+                className="relative overflow-hidden text-white px-8 py-3 text-sm font-bold rounded-2xl transition-all duration-300 flex items-center space-x-2 shadow-xl"
+                style={{
+                  background: `linear-gradient(135deg, ${colors.primary[600]}, ${colors.primary[800]})`
+                }}
+              >
+                {/* Animated background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6 }}
+                />
+                <span className="relative z-10">MAKE AN APPOINTMENT</span>
+                <motion.svg 
+                  className="w-4 h-4 relative z-10" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </motion.svg>
+              </motion.button>
+
+              {/* Enhanced Mobile menu button */}
+              <motion.div 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={`md:hidden p-3 rounded-2xl transition-all duration-300 cursor-pointer ${
+                  isScrolled 
+                    ? 'bg-gray-100 text-gray-700' 
+                    : 'bg-white/20 backdrop-blur-sm text-white'
+                }`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <motion.svg 
+                  className="w-6 h-6" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  animate={{ rotate: isMenuOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                </svg>
-              </div>
+                </motion.svg>
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Bottom Navigation Menu */}
-      <div className="w-full bg-white border-t border-gray-200">
+      {/* Enhanced Bottom Navigation Menu */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="w-full bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg"
+      >
         <div className="max-w-none w-[70%] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {menuItems.map((item) => (
-                <div key={item.key} className="relative group">
+          <div className="flex items-center justify-between h-16">
+            {/* Enhanced Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-2">
+              {menuItems.map((item, index) => (
+                <motion.div 
+                  key={item.key} 
+                  className="relative group"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
+                >
                   {item.hasDropdown ? (
                     <div className="relative">
                       <Link
                         to="/services"
-                        className="flex items-center space-x-1 text-gray-700 font-medium py-2 px-3 transition-all duration-200"
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.color = colors.primary[700]
-                          setIsServicesDropdownOpen(true)
-                        }}
-                        onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
+                        className="flex items-center space-x-2 text-gray-700 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:shadow-lg group"
+                        onMouseEnter={() => setIsServicesDropdownOpen(true)}
                         onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                       >
-                        <span className="text-sm font-semibold">{item.label}</span>
+                        <span className="text-sm font-bold group-hover:text-blue-700 transition-colors duration-200">{item.label}</span>
                         <motion.svg 
                           animate={{ rotate: isServicesDropdownOpen ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="w-4 h-4 ml-1" 
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="w-4 h-4 text-blue-600 group-hover:text-blue-700" 
                           fill="none" 
                           stroke="currentColor" 
-                          viewBox="0 0 24 24" 
-                          style={{color: colors.primary[700]}}
+                          viewBox="0 0 24 24"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </motion.svg>
                       </Link>
-                      
-                      {/* Services Dropdown */}
+                      {/* Enhanced Services Dropdown */}
                       <AnimatePresence>
                         {isServicesDropdownOpen && (
                           <motion.div
-                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 py-2 z-50 services-dropdown"
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100/50 py-3 z-50 services-dropdown overflow-hidden"
                             onMouseEnter={() => setIsServicesDropdownOpen(true)}
                             onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                            style={{
+                              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+                            }}
                           >
-                            {serviceItems.map((service) => (
-                              <Link
+                            {serviceItems.map((service, serviceIndex) => (
+                              <motion.div
                                 key={service.key}
-                                to={`/services/${service.key}`}
-                                className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-                                onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                                onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
-                                onClick={() => setIsServicesDropdownOpen(false)}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: serviceIndex * 0.05, duration: 0.3 }}
                               >
-                                {service.label}
-                              </Link>
+                                <Link
+                                  to={`/services/${service.key}`}
+                                  className="block px-6 py-4 text-sm text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 transition-all duration-200 group relative overflow-hidden"
+                                  onClick={() => setIsServicesDropdownOpen(false)}
+                                >
+                                  <motion.div
+                                    className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-blue-700 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"
+                                  />
+                                  <span className="group-hover:text-blue-700 group-hover:font-semibold transition-all duration-200 relative z-10">
+                                    {service.label}
+                                  </span>
+                                </Link>
+                              </motion.div>
                             ))}
                           </motion.div>
                         )}
                       </AnimatePresence>
                     </div>
+                  ) : item.key === 'blog' ? (
+                    <Link
+                      to="/blog"
+                      className="flex items-center space-x-2 text-gray-700 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 hover:shadow-lg group"
+                    >
+                      <span className="text-sm font-bold group-hover:text-purple-800 transition-colors duration-200">{item.label}</span>
+                    </Link>
+                  ) : item.key === 'about' ? (
+                    <Link
+                      to="/about"
+                      className="flex items-center space-x-2 text-gray-700 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-green-50 hover:to-green-100 hover:shadow-lg group"
+                    >
+                      <span className="text-sm font-bold group-hover:text-green-800 transition-colors duration-200">{item.label}</span>
+                    </Link>
                   ) : (
-                    <a 
+                    <motion.a 
                       href={`#${item.key}`}
-                      className="flex items-center space-x-1 text-gray-700 font-medium py-2 px-3 transition-all duration-200"
-                      onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
+                      className="flex items-center space-x-2 text-gray-700 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:shadow-lg group"
+                      whileHover={{ scale: 1.02 }}
                       onClick={(e) => {
                         if (location.pathname !== '/') {
                           e.preventDefault()
@@ -218,22 +336,22 @@ export default function Navbar() {
                         }
                       }}
                     >
-                      <span className="text-sm font-semibold">{item.label}</span>
-                    </a>
+                      <span className="text-sm font-bold group-hover:text-gray-800 transition-colors duration-200">{item.label}</span>
+                    </motion.a>
                   )}
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            {/* Right Actions */}
+            {/* Enhanced Right Actions */}
             <div className="flex items-center space-x-4">
-              {/* Search */}
+              {/* Enhanced Search */}
               <div ref={searchRef} className="relative">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="p-2 text-gray-500 transition-colors duration-200"
-                  onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                  onMouseLeave={(e) => e.currentTarget.style.color = '#6b7280'}
+                  className="p-3 text-gray-600 hover:text-blue-600 transition-all duration-300 rounded-2xl hover:bg-blue-50 hover:shadow-lg"
                   aria-label="Search"
                 >
                   <AnimatePresence mode="wait">
@@ -267,17 +385,17 @@ export default function Navbar() {
                       </motion.svg>
                     )}
                   </AnimatePresence>
-                </button>
+                </motion.button>
                 
-                {/* Animated Search Input */}
+                {/* Enhanced Animated Search Input */}
                 <AnimatePresence>
                   {isSearchOpen && (
                     <motion.div
                       initial={{ opacity: 0, width: 0, x: 20 }}
-                      animate={{ opacity: 1, width: 300, x: 0 }}
+                      animate={{ opacity: 1, width: 320, x: 0 }}
                       exit={{ opacity: 0, width: 0, x: 20 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="absolute right-0 top-0 z-10 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden"
+                      className="absolute right-0 top-0 z-10 bg-white/95 backdrop-blur-xl border border-gray-200/50 rounded-2xl shadow-2xl overflow-hidden"
                     >
                       <div className="flex items-center">
                         <input
@@ -285,8 +403,8 @@ export default function Navbar() {
                           type="text"
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search..."
-                          className="flex-1 px-4 py-2 text-gray-700 bg-transparent border-none outline-none placeholder-gray-400"
+                          placeholder="Search services..."
+                          className="flex-1 px-5 py-3 text-gray-700 bg-transparent border-none outline-none placeholder-gray-400 text-sm"
                           onKeyDown={(e) => {
                             if (e.key === 'Escape') {
                               setIsSearchOpen(false)
@@ -297,10 +415,9 @@ export default function Navbar() {
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="p-2 text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                          className="p-3 text-gray-400 hover:text-blue-600 transition-colors duration-200"
                           onClick={() => {
                             if (searchQuery.trim()) {
-                              // Handle search submission
                               console.log('Searching for:', searchQuery)
                               setIsSearchOpen(false)
                               setSearchQuery('')
@@ -317,174 +434,221 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
               
-              {/* Language Toggle Switch */}
-              <div className="flex items-center">
+              {/* Enhanced Language Toggle Switch */}
+              <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7, duration: 0.4 }}
+              >
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => changeLanguage(currentLanguage === 'fr' ? 'en' : 'fr')}
-                  className="relative flex items-center justify-center w-16 h-8 rounded-full transition-all duration-300 shadow-sm"
+                  className="relative flex items-center justify-center w-20 h-10 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl"
                   style={{
-                    backgroundColor: currentLanguage === 'fr' ? colors.primary[600] : colors.primary[600],
-                    border: `2px solid ${colors.primary[700]}`
+                    background: `linear-gradient(135deg, ${colors.primary[500]}, ${colors.primary[700]})`,
+                    border: `2px solid ${colors.primary[600]}`
                   }}
                 >
-                  {/* Background flags */}
-                  <div className="absolute left-2 text-sm opacity-80">
+                  {/* Background flags with better positioning */}
+                  <div className="absolute left-3 text-lg opacity-70 transition-opacity duration-300">
                     🇫🇷
                   </div>
-                  <div className="absolute right-2 text-sm opacity-80">
+                  <div className="absolute right-3 text-lg opacity-70 transition-opacity duration-300">
                     🇺🇸
                   </div>
                   
-                  {/* Moving toggle */}
+                  {/* Enhanced moving toggle */}
                   <motion.div
                     animate={{
-                      x: currentLanguage === 'fr' ? -12 : 12,
+                      x: currentLanguage === 'fr' ? -16 : 16,
                     }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="absolute w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-sm border-2"
-                    style={{ borderColor: colors.primary[700] }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    className="absolute w-8 h-8 bg-white rounded-xl shadow-lg flex items-center justify-center text-lg border-2 z-10"
+                    style={{ 
+                      borderColor: colors.primary[600],
+                      boxShadow: `0 4px 12px ${colors.primary[500]}40`
+                    }}
                   >
-                    {currentLanguage === 'fr' ? '🇫🇷' : '🇺🇸'}
-                  </motion.div>
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-          <div className="px-4 py-6 space-y-3">
-            {menuItems.map((item) => (
-              <div key={item.key}>
-                {item.hasDropdown ? (
-                  <div>
-                    <Link 
-                      to="/services"
-                      className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-700 transition-all duration-200 font-medium"
-                      onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
-                      onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                    <motion.span
+                      key={currentLanguage}
+                      initial={{ scale: 0.5, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <span>{item.label}</span>
-                      <motion.svg 
-                        animate={{ rotate: isServicesDropdownOpen ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="w-4 h-4" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </motion.svg>
-                    </Link>
-                    
-                    <AnimatePresence>
-                      {isServicesDropdownOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="ml-4 mt-2 space-y-2"
-                        >
-                          {serviceItems.map((service) => (
-                            <Link
-                              key={service.key}
-                              to={`/services/${service.key}`}
-                              className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200"
-                              onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                              onMouseLeave={(e) => e.currentTarget.style.color = '#6b7280'}
-                              onClick={() => {
-                                setIsServicesDropdownOpen(false)
-                                setIsMenuOpen(false)
-                              }}
-                            >
-                              {service.label}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <a 
-                    href={`#${item.key}`}
-                    className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-700 transition-all duration-200 font-medium"
-                    onMouseEnter={(e) => e.currentTarget.style.color = colors.primary[700]}
-                    onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
-                    onClick={(e) => {
-                      if (location.pathname !== '/') {
-                        e.preventDefault()
-                        window.location.href = `/#${item.key}`
-                      }
-                      setIsMenuOpen(false)
-                    }}
-                  >
-                    <span>{item.label}</span>
-                  </a>
-                )}
-              </div>
-            ))}
-            
-            {/* Mobile Info */}
-            <div className="pt-4 border-t border-gray-200 space-y-3">
-              <div className={`text-sm ${isServicesPage ? 'text-blue-600' : 'text-gray-600'}`}>
-                <div className="font-semibold">BOARDING HOURS</div>
-                <div>Lun-Ven 8h30-17h</div>
-              </div>
-              <div className={`text-sm ${isServicesPage ? 'text-blue-600' : 'text-gray-600'}`}>
-                <div className="font-semibold">CALL US</div>
-                <div>(438) 867-1822</div>
-              </div>
-              <div className={`text-sm ${isServicesPage ? 'text-blue-600' : 'text-gray-600'}`}>
-                <div className="font-semibold">ADDRESS</div>
-                <div>2844 Boul Industriel, Joliette, QC</div>
-              </div>
-              
-              {/* Mobile Language Toggle */}
-              <div className="flex items-center justify-between">
-                <span className={`text-sm font-semibold ${isServicesPage ? 'text-blue-600' : 'text-gray-600'}`}>LANGUAGE</span>
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => changeLanguage(currentLanguage === 'fr' ? 'en' : 'fr')}
-                  className="relative flex items-center justify-center w-16 h-8 rounded-full transition-all duration-300 shadow-sm"
-                  style={{
-                    backgroundColor: currentLanguage === 'fr' ? colors.primary[600] : colors.primary[600],
-                    border: `2px solid ${colors.primary[700]}`
-                  }}
-                >
-                  {/* Background flags */}
-                  <div className="absolute left-2 text-sm opacity-80">
-                    🇫🇷
-                  </div>
-                  <div className="absolute right-2 text-sm opacity-80">
-                    🇺🇸
-                  </div>
-                  
-                  {/* Moving toggle */}
-                  <motion.div
-                    animate={{
-                      x: currentLanguage === 'fr' ? -12 : 12,
-                    }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    className="absolute w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center text-sm border-2"
-                    style={{ borderColor: colors.primary[700] }}
-                  >
-                    {currentLanguage === 'fr' ? '🇫🇷' : '🇺🇸'}
+                      {currentLanguage === 'fr' ? '🇫🇷' : '🇺🇸'}
+                    </motion.span>
                   </motion.div>
                 </motion.button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      )}
-    </nav>
+      </motion.div>
+
+      {/* Enhanced Mobile menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl overflow-hidden"
+          >
+            <div className="px-6 py-8 space-y-4">
+              {menuItems.map((item, index) => (
+                <motion.div 
+                  key={item.key}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
+                >
+                  {item.hasDropdown ? (
+                    <div>
+                      <Link 
+                        to="/services"
+                        className="flex items-center justify-between w-full text-left px-6 py-4 text-gray-700 transition-all duration-300 font-semibold rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:shadow-lg group"
+                        onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                      >
+                        <span className="group-hover:text-blue-700">{item.label}</span>
+                        <motion.svg 
+                          animate={{ rotate: isServicesDropdownOpen ? 180 : 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="w-5 h-5 text-blue-600 group-hover:text-blue-700" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </motion.svg>
+                      </Link>
+                      
+                      <AnimatePresence>
+                        {isServicesDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="ml-4 mt-3 space-y-2 overflow-hidden"
+                          >
+                            {serviceItems.map((service, serviceIndex) => (
+                              <motion.div
+                                key={service.key}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: serviceIndex * 0.05, duration: 0.3 }}
+                              >
+                                <Link
+                                  to={`/services/${service.key}`}
+                                  className="block px-6 py-3 text-sm text-gray-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 rounded-xl group"
+                                  onClick={() => {
+                                    setIsServicesDropdownOpen(false)
+                                    setIsMenuOpen(false)
+                                  }}
+                                >
+                                  <span className="group-hover:font-semibold transition-all duration-200">{service.label}</span>
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : item.key === 'blog' ? (
+                    <Link
+                      to="/blog"
+                      className="flex items-center justify-between w-full text-left px-6 py-4 text-gray-700 transition-all duration-300 font-semibold rounded-2xl hover:bg-gradient-to-r hover:from-purple-50 hover:to-purple-100 hover:shadow-lg group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="group-hover:text-purple-800">{item.label}</span>
+                    </Link>
+                  ) : item.key === 'about' ? (
+                    <Link
+                      to="/about"
+                      className="flex items-center justify-between w-full text-left px-6 py-4 text-gray-700 transition-all duration-300 font-semibold rounded-2xl hover:bg-gradient-to-r hover:from-green-50 hover:to-green-100 hover:shadow-lg group"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="group-hover:text-green-800">{item.label}</span>
+                    </Link>
+                  ) : (
+                    <a 
+                      href={`#${item.key}`}
+                      className="flex items-center justify-between w-full text-left px-6 py-4 text-gray-700 transition-all duration-300 font-semibold rounded-2xl hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:shadow-lg group"
+                      onClick={(e) => {
+                        if (location.pathname !== '/') {
+                          e.preventDefault()
+                          window.location.href = `/#${item.key}`
+                        }
+                        setIsMenuOpen(false)
+                      }}
+                    >
+                      <span className="group-hover:text-gray-800">{item.label}</span>
+                    </a>
+                  )}
+                </motion.div>
+              ))}
+              
+              {/* Enhanced Mobile Info */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+                className="pt-6 border-t border-gray-200/50 space-y-4"
+              >
+                <div className="flex flex-col gap-2 px-2">
+                   <div className="text-sm font-semibold"
+                     style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
+                     BOARDING HOURS: <span className="font-normal"
+                       style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
+                       Lun-Ven 8h30-17h
+                     </span>
+                   </div>
+                   <div className="text-sm font-semibold"
+                     style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
+                     CALL US: <span className="font-normal"
+                       style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
+                       (438) 867-1822
+                     </span>
+                   </div>
+                  <div className="text-sm font-semibold text-gray-700">
+                    ADDRESS: <span className="text-gray-600 font-normal">2844 Boul Industriel, Joliette, QC</span>
+                  </div>
+                </div>
+                
+                {/* Enhanced Mobile Language Toggle */}
+                <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl">
+                  <span className="text-sm font-bold text-purple-700">LANGUAGE</span>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => changeLanguage(currentLanguage === 'fr' ? 'en' : 'fr')}
+                    className="relative flex items-center justify-center w-16 h-8 rounded-xl transition-all duration-300 shadow-lg"
+                    style={{
+                      background: `linear-gradient(135deg, ${colors.primary[500]}, ${colors.primary[700]})`,
+                      border: `2px solid ${colors.primary[600]}`
+                    }}
+                  >
+                    <div className="absolute left-2 text-sm opacity-70">🇫🇷</div>
+                    <div className="absolute right-2 text-sm opacity-70">🇺🇸</div>
+                    <motion.div
+                      animate={{ x: currentLanguage === 'fr' ? -12 : 12 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                      className="absolute w-6 h-6 bg-white rounded-lg shadow-md flex items-center justify-center text-sm border-2 z-10"
+                      style={{ borderColor: colors.primary[600] }}
+                    >
+                      {currentLanguage === 'fr' ? '🇫🇷' : '🇺🇸'}
+                    </motion.div>
+                  </motion.button>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   )
 }
   

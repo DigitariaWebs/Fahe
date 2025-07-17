@@ -70,7 +70,55 @@
         "step4Desc": "Vérification complète et test de performance"
       },
       "ctaTitle": "Problème de Transmission?",
-      "ctaSubtitle": "Contactez nos experts pour un diagnostic gratuit et un devis personnalisé"
+      "ctaSubtitle": "Contactez nos experts pour un diagnostic gratuit et un devis personnalisé",
+      "testimonialsTitle": "Témoignages Clients",
+      "testimonialsSubtitle": "Ce que disent nos clients de nos services de transmission",
+      "testimonials": {
+        "test1": {
+          "name": "John D.",
+          "comment": "Service excellent! Ma transmission est comme neuve."
+        },
+        "test2": {
+          "name": "Sarah M.",
+          "comment": "Réparation rapide et professionnelle. Hautement recommandé!"
+        },
+        "test3": {
+          "name": "Mike R.",
+          "comment": "Excellent rapport qualité-prix. Transmission fonctionne parfaitement maintenant."
+        }
+      },
+      "technologyTitle": "Notre Technologie de Transmission",
+      "technologySubtitle": "Outils avancés pour des réparations précises",
+      "technology": {
+        "item1": {
+          "title": "Scanner de Diagnostic",
+          "desc": "Équipements de scan de pointe pour détection précise des problèmes"
+        },
+        "item2": {
+          "title": "Équipement de Reconstruction",
+          "desc": "Outils professionnels pour reconstruction complète de transmission"
+        },
+        "item3": {
+          "title": "Banc d'Essai",
+          "desc": "Banc spécialisé pour tests de performance"
+        }
+      },
+      "whyTitle": "Pourquoi Nous Choisir pour la Transmission",
+      "whySubtitle": "Expertise et fiabilité en services de transmission",
+      "why": {
+        "item1": {
+          "title": "20+ Ans d'Expérience",
+          "desc": "Spécialisé en transmissions depuis plus de deux décennies"
+        },
+        "item2": {
+          "title": "Garantie Incluse",
+          "desc": "Garantie complète sur toutes les réparations"
+        },
+        "item3": {
+          "title": "Délai Rapide",
+          "desc": "Service rapide sans compromettre la qualité"
+        }
+      }
     },
     "engine": {
       "title": "Reconstruction de Moteur Expert",
@@ -90,7 +138,51 @@
         "item3": "Tests de performance complets avant livraison du véhicule"
       },
       "ctaTitle": "Moteur Défaillant?",
-      "ctaSubtitle": "Obtenez un devis gratuit pour la reconstruction de votre moteur"
+      "ctaSubtitle": "Obtenez un devis gratuit pour la reconstruction de votre moteur",
+      "processTitle": "Notre Processus de Reconstruction Moteur",
+      "processSubtitle": "Approche étape par étape pour la restauration du moteur",
+      "process": {
+        "step1": "Évaluation Initiale",
+        "step1Desc": "Inspection approfondie de l'état du moteur",
+        "step2": "Démontage",
+        "step2Desc": "Démontage et nettoyage soigneux",
+        "step3": "Reconstruction",
+        "step3Desc": "Remplacement avec pièces de qualité",
+        "step4": "Tests",
+        "step4Desc": "Tests de performance complets"
+      },
+      "testimonialsTitle": "Témoignages Service Moteur",
+      "testimonialsSubtitle": "Retours de nos clients satisfaits des réparations moteur",
+      "testimonials": {
+        "test1": {
+          "name": "Emily S.",
+          "comment": "Mon moteur fonctionne mieux que jamais après la reconstruction!"
+        },
+        "test2": {
+          "name": "David L.",
+          "comment": "Service professionnel et excellents résultats."
+        },
+        "test3": {
+          "name": "Anna K.",
+          "comment": "M'a évité d'acheter une nouvelle voiture. Excellent travail!"
+        }
+      },
+      "whyTitle": "Pourquoi Nous pour les Services Moteur",
+      "whySubtitle": "Experts de confiance en reconstruction moteur",
+      "why": {
+        "item1": {
+          "title": "Mécaniciens Certifiés",
+          "desc": "Professionnels hautement qualifiés et certifiés"
+        },
+        "item2": {
+          "title": "Pièces de Qualité",
+          "desc": "Utilisation exclusive de composants premium"
+        },
+        "item3": {
+          "title": "Garantie de Satisfaction",
+          "desc": "Nous garantissons notre travail à 100%"
+        }
+      }
     },
     "maintenance": {
       "title": "Entretien Automobile Complet",
@@ -117,7 +209,49 @@
         "item4": "Assure votre sécurité et celle de vos passagers"
       },
       "ctaTitle": "Planifiez Votre Entretien",
-      "ctaSubtitle": "Réservez dès maintenant votre service d'entretien préventif"
+      "ctaSubtitle": "Réservez dès maintenant votre service d'entretien préventif",
+      "processTitle": "Processus d'Entretien",
+      "processSubtitle": "Notre approche systématique pour l'entretien du véhicule",
+      "process": {
+        "step1": "Inspection",
+        "step1Desc": "Vérification complète du véhicule",
+        "step2": "Service",
+        "step2Desc": "Exécution de l'entretien requis",
+        "step3": "Vérification",
+        "step3Desc": "Contrôle qualité final"
+      },
+      "testimonialsTitle": "Témoignages Entretien",
+      "testimonialsSubtitle": "Ce que disent les clients de nos services d'entretien",
+      "testimonials": {
+        "test1": {
+          "name": "Robert T.",
+          "comment": "L'entretien régulier garde ma voiture en parfait état."
+        },
+        "test2": {
+          "name": "Lisa W.",
+          "comment": "Service rapide et complet à chaque fois."
+        },
+        "test3": {
+          "name": "Michael B.",
+          "comment": "Meilleur atelier d'entretien en ville!"
+        }
+      },
+      "technologyTitle": "Technologie d'Entretien",
+      "technologySubtitle": "Outils modernes pour un entretien efficace",
+      "technology": {
+        "item1": {
+          "title": "Outils de Diagnostic",
+          "desc": "Équipements de scan avancés"
+        },
+        "item2": {
+          "title": "Systèmes de Levage",
+          "desc": "Ponts élévateurs professionnels"
+        },
+        "item3": {
+          "title": "Machines d'Alignement",
+          "desc": "Systèmes d'alignement de précision"
+        }
+      }
     },
     "diagnostic": {
       "title": "Diagnostic Automobile Avancé",
@@ -155,7 +289,55 @@
         "step3Desc": "Explication claire des problèmes et solutions recommandées"
       },
       "ctaTitle": "Problème Non Identifié?",
-      "ctaSubtitle": "Notre diagnostic complet révélera la cause de vos problèmes automobiles"
+      "ctaSubtitle": "Notre diagnostic complet révélera la cause de vos problèmes automobiles",
+      "testimonialsTitle": "Témoignages Diagnostic",
+      "testimonialsSubtitle": "Retours clients sur nos services de diagnostic",
+      "testimonials": {
+        "test1": {
+          "name": "Sophie L.",
+          "comment": "Diagnostic précis m'a fait économiser temps et argent."
+        },
+        "test2": {
+          "name": "Thomas G.",
+          "comment": "A trouvé le problème que d'autres garages ont manqué."
+        },
+        "test3": {
+          "name": "Maria V.",
+          "comment": "Service de diagnostic professionnel et détaillé."
+        }
+      },
+      "benefitsTitle": "Avantages des Diagnostics Professionnels",
+      "benefitsSubtitle": "Pourquoi choisir nos services de diagnostic",
+      "benefits": {
+        "item1": {
+          "title": "Précision",
+          "desc": "Identification précise des problèmes"
+        },
+        "item2": {
+          "title": "Efficacité",
+          "desc": "Économisez du temps sur les réparations"
+        },
+        "item3": {
+          "title": "Économies",
+          "desc": "Évitez les réparations inutiles"
+        }
+      },
+      "whyTitle": "Pourquoi Notre Service de Diagnostic",
+      "whySubtitle": "Diagnostics experts en qui vous pouvez avoir confiance",
+      "why": {
+        "item1": {
+          "title": "Équipement Avancé",
+          "desc": "Technologie de diagnostic la plus récente"
+        },
+        "item2": {
+          "title": "Techniciens Expérimentés",
+          "desc": "Techniciens qualifiés"
+        },
+        "item3": {
+          "title": "Résultats Rapides",
+          "desc": "Diagnostics rapides et fiables"
+        }
+      }
     }
   },
   "testimonials": {
@@ -302,5 +484,42 @@
     "rights": "Tous droits réservés.",
     "privacy": "Confidentialité",
     "terms": "Conditions"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Réponses aux questions les plus courantes de nos clients.",
+    "questions": {
+      "q1": {
+        "question": "Quels types de véhicules réparez-vous?",
+        "answer": "Nous réparons toutes les marques et modèles, incluant les véhicules domestiques, européens et asiatiques."
+      },
+      "q2": {
+        "question": "Offrez-vous une garantie sur les réparations?",
+        "answer": "Oui, nous offrons une garantie sur les pièces et la main-d'œuvre pour la plupart des réparations. Demandez-nous les détails pour votre service spécifique."
+      },
+      "q3": {
+        "question": "Comment puis-je prendre rendez-vous?",
+        "answer": "Vous pouvez prendre rendez-vous en nous appelant, en utilisant notre formulaire de contact en ligne, ou en nous visitant en personne."
+      },
+      "q4": {
+        "question": "Combien de temps prend un service typique?",
+        "answer": "La plupart des services de routine sont complétés le même jour. Les réparations plus complexes peuvent prendre plus de temps, et nous vous tiendrons toujours informé."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Conseils, nouvelles et avis de nos experts.",
+    "readMore": "Lire la suite",
+    "posts": {
+      "post1": {
+        "title": "5 Conseils d'Entretien Automobile Essentiels pour Chaque Conducteur",
+        "summary": "Gardez votre véhicule en bon état de marche et évitez les réparations coûteuses avec ces cinq conseils d'entretien essentiels. Apprenez comment des vérifications régulières peuvent prolonger la vie de votre voiture."
+      },
+      "post2": {
+        "title": "Comment Savoir Quand Votre Transmission a Besoin d'un Service",
+        "summary": "Les problèmes de transmission peuvent être délicats. Découvrez les signes d'avertissement qui indiquent qu'il est temps d'amener votre voiture pour une vérification professionnelle de transmission."
+      }
+    }
   }
 }
