@@ -67,7 +67,7 @@ export const images = {
 
 // Vidéos
 export const videos = {
-  hero: 'https://videos.pexels.com/video-files/4489880/4489880-uhd_2732_1440_25fps.mp4',
+  hero: '/video.mp4',
 } as const
 
 // Icônes système (pour les icônes SVG inline)
