@@ -123,7 +123,7 @@ export default function Navbar() {
                   <img 
                     src="/logo.svg" 
                     alt="Logo" 
-                    className="w-28 h-28 filter drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-2xl" 
+                    className="w-24 h-24 filter drop-shadow-lg transition-all duration-300 group-hover:drop-shadow-2xl" 
                   />
                 </motion.div>
                 {/* Glow effect on hover */}
@@ -133,13 +133,13 @@ export default function Navbar() {
 
             {/* Enhanced Center Info - Boarding Hours */}
             <div
-              className={`hidden md:flex items-center space-x-8 px-6 py-3 rounded-2xl transition-all duration-300 ${
+              className={`hidden md:flex items-center space-x-8 px-4 py-2 rounded-2xl transition-all duration-300 ${
                 isScrolled 
                   ? 'bg-gradient-to-r from-blue-50 to-blue-100 shadow-lg' 
                   : 'bg-white/20 backdrop-blur-sm'
               }`}
             >
-              <span className={`text-sm font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-blue-700' : 'text-white')}`}
+              <span className={`text-xs font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-blue-700' : 'text-white')}`}
                 style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
                 BOARDING HOURS: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-blue-600' : 'text-white')}
                   style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
@@ -149,16 +149,16 @@ export default function Navbar() {
             </div>
 
             {/* Enhanced Right Side - Call Us & CTA */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3">
               {/* Simple Call Us */}
               <div
-                className={`hidden md:flex items-center space-x-8 px-6 py-3 rounded-2xl transition-all duration-300 ${
+                className={`hidden md:flex items-center space-x-8 px-4 py-2 rounded-2xl transition-all duration-300 ${
                   isScrolled 
                     ? 'bg-gradient-to-r from-gray-50 to-gray-100 shadow-lg' 
                     : 'bg-white/20 backdrop-blur-sm'
                 }`}
               >
-                <span className={`text-sm font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
+                <span className={`text-xs font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
                   style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
                   CALL US: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-gray-600' : 'text-white/90')}
                     style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
@@ -178,7 +178,7 @@ export default function Navbar() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigateToContact(navigate, location.pathname)}
-                className="relative overflow-hidden text-white px-8 py-3 text-sm font-bold rounded-2xl transition-all duration-300 flex items-center space-x-2 shadow-xl"
+                className="relative overflow-hidden text-white px-6 py-2 text-xs font-bold rounded-2xl transition-all duration-300 flex items-center space-x-2 shadow-xl"
                 style={{
                   background: `linear-gradient(135deg, ${colors.primary[600]}, ${colors.primary[800]})`
                 }}
@@ -192,7 +192,7 @@ export default function Navbar() {
                 />
                 <span className="relative z-10">MAKE AN APPOINTMENT</span>
                 <motion.svg 
-                  className="w-4 h-4 relative z-10" 
+                  className="w-3 h-3 relative z-10" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -254,15 +254,15 @@ export default function Navbar() {
                     <div className="relative">
                       <Link
                         to="/services"
-                        className="flex items-center space-x-2 text-gray-700 font-semibold py-3 px-6 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:shadow-lg group"
+                        className="flex items-center space-x-2 text-gray-700 font-semibold py-2 px-4 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-50 hover:to-blue-100 hover:shadow-lg group"
                         onMouseEnter={() => setIsServicesDropdownOpen(true)}
                         onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                       >
-                        <span className="text-sm font-bold group-hover:text-blue-700 transition-colors duration-200">{item.label}</span>
+                        <span className="text-xs font-bold group-hover:text-blue-700 transition-colors duration-200">{item.label}</span>
                         <motion.svg 
                           animate={{ rotate: isServicesDropdownOpen ? 180 : 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="w-4 h-4 text-blue-600 group-hover:text-blue-700" 
+                          className="w-3 h-3 text-blue-600 group-hover:text-blue-700" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
