@@ -113,7 +113,7 @@ const AboutUs: React.FC = () => {
             className="relative h-96 bg-gray-200 rounded-lg overflow-hidden shadow-lg"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.8844!2d-73.4287!3d46.0233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93a4e7c7d7d7d%3A0x4cc93a4e7c7d7d7d!2s2844%20Boul%20Industriel%2C%20Joliette%2C%20QC!5e0!3m2!1sen!2sca!4v1689876543210!5m2!1sen!2sca"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.0584830669626!2d-73.5772884!3d45.6157312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91f8fc47bbfa1%3A0x18e83f2a01717b74!2s12144%20Boulevard%20Industriel%2C%20Montr%C3%A9al%2C%20QC%20H1B%205R7!5e0!3m2!1sen!2sca!4v1690910000000!5m2!1sen!2sca"
               width="100%"
               height="100%"
               style={{ border: 0 }}

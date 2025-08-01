@@ -1,14 +1,28 @@
 {
+  "navbar": {
+    "brand": "Garage Fahe",
+    "services": "Services",
+    "specials": "Promotions",
+    "facilities": "Installations",
+    "reviews": "Avis",
+    "shop": "Boutique",
+    "about": "À propos",
+    "boardingHours": "HEURES D'OUVERTURE",
+    "boardingTime": "Lun-Ven 8h30-17h",
+    "callUs": "APPELEZ-NOUS",
+    "phoneNumber": "(438) 867-1822",
+    "address": "ADRESSE",
+    "addressValue": "12144 Bd Industriel, Montréal, QC H1B 5R7",
+    "language": "LANGUE",
+    "makeAppointment": "PRENDRE RENDEZ-VOUS"
+  },
   "welcome": "Bienvenue",
-  "hello": "Bonjour",
   "goodbye": "Au revoir",
-  "language": "Langue",
   "english": "Anglais",
   "french": "Français",
   "change_language": "Changer de langue",
   "home": "Accueil",
   "about": "À propos",
-  "contact": "Contact",
   "loading": "Chargement...",
   "error": "Une erreur s'est produite",
   "success": "Succès",
@@ -342,7 +356,7 @@
   },
   "testimonials": {
     "title": "Ce que disent nos clients",
-    "subtitle": "Plus de 20 ans d'expérience et des centaines de clients satisfaits dans la région de Joliette",
+    "subtitle": "Plus de 20 ans d'expérience et des centaines de clients satisfaits dans la région de Montréal",
     "cta_text": "Rejoignez nos clients satisfaits",
     "cta_button": "Prendre Rendez-vous"
   },
@@ -354,23 +368,9 @@
     "login": "Connexion",
     "getQuote": "Devis"
   },
-  "navbar": {
-    "brand": "Fahe Garage",
-    "services": "Services",
-    "specials": "Promotions",
-    "facilities": "Installations",
-    "reviews": "Avis",
-    "shop": "Boutique",
-    "about": "À propos",
-    "boarding_hours": "Heures d'accueil",
-    "schedule": "Lun - Sam: 7h00 - 18h00",
-    "call_us": "Appelez-nous",
-    "phone": "(555) Car-Repair",
-    "appointment": "Prendre Rendez-vous"
-  },
   "aboutUs": {
     "title": "À Propos de Nous",
-    "subtitle": "Votre partenaire de confiance pour tous vos besoins automobiles à Joliette. Nous offrons des services professionnels avec une équipe expérimentée et passionnée.",
+    "subtitle": "Votre partenaire de confiance pour tous vos besoins automobiles à Montréal. Nous offrons des services professionnels avec une équipe expérimentée et passionnée.",
     "mission": {
       "title": "Notre Mission",
       "description1": "Chez FAHE, nous nous engageons à fournir des services automobiles de la plus haute qualité. Notre équipe de mécaniciens certifiés utilise les technologies les plus avancées pour diagnostiquer et réparer votre véhicule avec précision.",
@@ -378,7 +378,7 @@
     },
     "contact": {
       "address": "Notre Adresse",
-      "addressValue": "2844 Boul Industriel, Joliette, QC",
+      "addressValue": "12144 Bd Industriel, Montréal, QC H1B 5R7",
       "phone": "Contactez-nous",
       "phoneValue": "(438) 867-1822"
     },
@@ -453,11 +453,11 @@
   "footer": {
     "brand": "FAHE Garage",
     "tagline": "Expert Automobile",
-    "description": "Spécialiste en transmission depuis plus de 20 ans. Votre partenaire de confiance pour tous vos besoins automobiles à Joliette.",
+    "description": "Spécialiste en transmission depuis plus de 20 ans. Votre partenaire de confiance pour tous vos besoins automobiles à Montréal.",
     "contact": {
       "title": "Contactez-nous",
-      "address": "2844 Boul Industriel",
-      "city": "Joliette, QC J6E 0N4",
+      "address": "12144 Bd Industriel",
+      "city": "Montréal, QC H1B 5R7",
       "phone": "(438) 867-1822",
       "phone_label": "Appelez pour rendez-vous",
       "email": "info@fahegarage.com",

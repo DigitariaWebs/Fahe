@@ -1,8 +1,7 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'motion/react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import LanguageSelector from './LanguageSelector'
 import useI18n from '../hooks/useI18n'
 import { colors } from '../config/colors'
 import { navigateToContact } from '../utils/navigation'
@@ -13,14 +12,9 @@ export default function Navbar() {
   const location = useLocation()
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [searchQuery, setSearchQuery] = useState('')
   const [isScrolled, setIsScrolled] = useState(false)
-  const searchRef = useRef<HTMLDivElement>(null)
-  const searchInputRef = useRef<HTMLInputElement>(null)
   
   // Check if we're on a services page
-  const isServicesPage = location.pathname.startsWith('/services')
 
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
 
@@ -63,28 +57,6 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
-
-  // Click outside to close search
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsSearchOpen(false)
-        setSearchQuery('')
-      }
-    }
-
-    if (isSearchOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-      // Focus search input when opened
-      setTimeout(() => {
-        searchInputRef.current?.focus()
-      }, 100)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isSearchOpen])
 
   return (
     <motion.nav 
@@ -141,9 +113,9 @@ export default function Navbar() {
             >
               <span className={`text-xs font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-blue-700' : 'text-white')}`}
                 style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
-                BOARDING HOURS: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-blue-600' : 'text-white')}
+                {t('navbar.boardingHours')}: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-blue-600' : 'text-white')}
                   style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
-                  Lun-Ven 8h30-17h
+                  {t('navbar.boardingTime')}
                 </span>
               </span>
             </div>
@@ -160,9 +132,9 @@ export default function Navbar() {
               >
                 <span className={`text-xs font-semibold ${location.pathname !== '/' ? 'text-primary-700' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
                   style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
-                  CALL US: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-gray-600' : 'text-white/90')}
+                  {t('navbar.callUs')}: <span className={location.pathname !== '/' ? 'text-primary-600' : (isScrolled ? 'text-gray-600' : 'text-white/90')}
                     style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
-                    (438) 867-1822
+                    {t('navbar.phoneNumber')}
                   </span>
                 </span>
               </div>
@@ -190,7 +162,7 @@ export default function Navbar() {
                   whileHover={{ x: '100%' }}
                   transition={{ duration: 0.6 }}
                 />
-                <span className="relative z-10">MAKE AN APPOINTMENT</span>
+                <span className="relative z-10">{t('navbar.makeAppointment')}</span>
                 <motion.svg 
                   className="w-3 h-3 relative z-10" 
                   fill="none" 
@@ -345,95 +317,6 @@ export default function Navbar() {
 
             {/* Enhanced Right Actions */}
             <div className="flex items-center space-x-4">
-              {/* Enhanced Search */}
-              <div ref={searchRef} className="relative">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  className="p-3 text-gray-600 hover:text-blue-600 transition-all duration-300 rounded-2xl hover:bg-blue-50 hover:shadow-lg"
-                  aria-label="Search"
-                >
-                  <AnimatePresence mode="wait">
-                    {isSearchOpen ? (
-                      <motion.svg
-                        key="close"
-                        initial={{ rotate: 0, scale: 0.8 }}
-                        animate={{ rotate: 90, scale: 1 }}
-                        exit={{ rotate: 0, scale: 0.8 }}
-                        transition={{ duration: 0.2 }}
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </motion.svg>
-                    ) : (
-                      <motion.svg
-                        key="search"
-                        initial={{ rotate: 90, scale: 0.8 }}
-                        animate={{ rotate: 0, scale: 1 }}
-                        exit={{ rotate: 90, scale: 0.8 }}
-                        transition={{ duration: 0.2 }}
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </motion.svg>
-                    )}
-                  </AnimatePresence>
-                </motion.button>
-                
-                {/* Enhanced Animated Search Input */}
-                <AnimatePresence>
-                  {isSearchOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, width: 0, x: 20 }}
-                      animate={{ opacity: 1, width: 320, x: 0 }}
-                      exit={{ opacity: 0, width: 0, x: 20 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="absolute right-0 top-0 z-10 bg-white/95 backdrop-blur-xl border border-gray-200/50 rounded-2xl shadow-2xl overflow-hidden"
-                    >
-                      <div className="flex items-center">
-                        <input
-                          ref={searchInputRef}
-                          type="text"
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          placeholder="Search services..."
-                          className="flex-1 px-5 py-3 text-gray-700 bg-transparent border-none outline-none placeholder-gray-400 text-sm"
-                          onKeyDown={(e) => {
-                            if (e.key === 'Escape') {
-                              setIsSearchOpen(false)
-                              setSearchQuery('')
-                            }
-                          }}
-                        />
-                        <motion.button
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="p-3 text-gray-400 hover:text-blue-600 transition-colors duration-200"
-                          onClick={() => {
-                            if (searchQuery.trim()) {
-                              console.log('Searching for:', searchQuery)
-                              setIsSearchOpen(false)
-                              setSearchQuery('')
-                            }
-                          }}
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                          </svg>
-                        </motion.button>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-              
               {/* Enhanced Language Toggle Switch */}
               <motion.div 
                 className="flex items-center"
@@ -601,26 +484,26 @@ export default function Navbar() {
                 <div className="flex flex-col gap-2 px-2">
                    <div className="text-sm font-semibold"
                      style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
-                     BOARDING HOURS: <span className="font-normal"
+                     {t('navbar.boardingHours')}: <span className="font-normal"
                        style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
-                       Lun-Ven 8h30-17h
+                       {t('navbar.boardingTime')}
                      </span>
                    </div>
                    <div className="text-sm font-semibold"
                      style={location.pathname !== '/' ? { color: colors.primary[700] } : {}}>
-                     CALL US: <span className="font-normal"
+                     {t('navbar.callUs')}: <span className="font-normal"
                        style={location.pathname !== '/' ? { color: colors.primary[600] } : {}}>
-                       (438) 867-1822
+                       {t('navbar.phoneNumber')}
                      </span>
                    </div>
                   <div className="text-sm font-semibold text-gray-700">
-                    ADDRESS: <span className="text-gray-600 font-normal">2844 Boul Industriel, Joliette, QC</span>
+                    {t('navbar.address')}: <span className="text-gray-600 font-normal">{t('navbar.addressValue')}</span>
                   </div>
                 </div>
                 
                 {/* Enhanced Mobile Language Toggle */}
                 <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl">
-                  <span className="text-sm font-bold text-purple-700">LANGUAGE</span>
+                  <span className="text-sm font-bold text-purple-700">{t('navbar.language')}</span>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
